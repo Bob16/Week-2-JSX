@@ -1,34 +1,58 @@
+<!-- HTML5 document declaration so browsers use modern layout rules -->
 <!DOCTYPE html>
+<!-- Root element, language is English for accessibility and typography -->
 <html lang="en">
+<!-- Head holds metadata, fonts, and styles; nothing here renders directly on the page -->
 <head>
+    <!-- Character encoding so all symbols and punctuation display correctly -->
     <meta charset="UTF-8">
+    <!-- Makes layout adapt to device width and initial zoom on mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Text shown in the browser tab for this pricing page -->
     <title>Pricing Plans — HTML version</title>
+    <!-- Pre-connect hint so the browser warms up connection to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Pre-connect hint for the static font files domain, with CORS enabled -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Import the Inter typeface family used across the UI -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Attach the main stylesheet that controls layout and visual styling -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Small fixed label at the top of the viewport describing this page variant -->
     <p class="page-label"><strong>HTML version</strong> — static markup</p>
+
+    <!-- Flex container that holds the Hobby and Pro pricing cards -->
     <div class="cards-container">
+        <!-- First pricing card showing the free Hobby tier -->
         <div class="card">
+            <!-- Grouping for Hobby plan title, price, and features -->
             <div class="card-top">
+                <!-- Hobby plan title, acts as the card heading -->
                 <h3 class="card-title">Hobby</h3>
+                <!-- Row that visually groups the price for the Hobby plan -->
                 <p class="card-price">
+                    <!-- Text label showing the Hobby price -->
                     <span class="card-price-amount">Free</span>
                 </p>
+                <!-- Section describing what is included in the Hobby plan -->
                 <div class="card-content">
+                    <!-- Short label introducing the list of benefits -->
                     <p class="includes-text">Includes:</p>
+                    <!-- Unordered list of individual Hobby features -->
                     <ul class="features-list">
+                        <!-- Benefit 1: no payment details needed to start -->
                         <li>
                             <span class="checkmark">✓</span>
                             No credit card required
                         </li>
+                        <!-- Benefit 2: limited but usable number of Agent calls -->
                         <li>
                             <span class="checkmark">✓</span>
                             Limited Agent requests
                         </li>
+                        <!-- Benefit 3: capped autocomplete suggestions -->
                         <li>
                             <span class="checkmark">✓</span>
                             Limited Tab completions
@@ -36,30 +60,45 @@
                     </ul>
                 </div>
             </div>
+            <!-- Secondary-style button for a softer call to action -->
             <button class="download-button secondary">Download</button>
         </div>
+
+        <!-- Second pricing card showing the paid Pro tier -->
         <div class="card">
+            <!-- Grouping for Pro plan title, price, and features -->
             <div class="card-top">
+                <!-- Pro plan title, visually consistent with Hobby -->
                 <h3 class="card-title">Pro</h3>
+                <!-- Row that visually groups the Pro price and billing period -->
                 <p class="card-price">
+                    <!-- Text label showing the Pro price amount -->
                     <span class="card-price-amount">$20</span>
+                    <!-- Supporting text showing that the price is monthly -->
                     <span class="card-price-period">/mo.</span>
                 </p>
+                <!-- Section describing what is included in addition to Hobby -->
                 <div class="card-content">
+                    <!-- Copy explaining that Pro builds on the Hobby plan -->
                     <p class="includes-text">Everything in Hobby, plus:</p>
+                    <!-- Unordered list of additional Pro-only benefits -->
                     <ul class="features-list">
+                        <!-- Benefit 1: more generous Agent usage limits -->
                         <li>
                             <span class="checkmark">✓</span>
                             Extended limits on Agent
                         </li>
+                        <!-- Benefit 2: no cap on autocomplete suggestions -->
                         <li>
                             <span class="checkmark">✓</span>
                             Unlimited Tab completions
                         </li>
+                        <!-- Benefit 3: AI Agents that can run in the background -->
                         <li>
                             <span class="checkmark">✓</span>
                             Background Agents
                         </li>
+                        <!-- Benefit 4: largest available window for in-context work -->
                         <li>
                             <span class="checkmark">✓</span>
                             Maximum context windows
@@ -67,7 +106,55 @@
                     </ul>
                 </div>
             </div>
+            <!-- Primary-style button emphasising the main upgrade action -->
             <button class="download-button primary">Get Pro</button>
+        </div>
+
+
+        
+
+        <!-- Third pricing card for Enterprise customers with the highest tier features -->
+        <div class="card">
+            <!-- Grouping for Enterprise plan title, price, and features -->
+            <div class="card-top">
+                <!-- Enterprise plan title, aligned with Hobby and Pro styling -->
+                <h3 class="card-title">Enterprise</h3>
+                <!-- Row that visually groups the Enterprise price and billing period -->
+                <p class="card-price">
+                    <!-- Price label; placeholder text signalling custom pricing -->
+                    <span class="card-price-amount">Contact us</span>
+                </p>
+                <!-- Section describing Enterprise-only capabilities on top of Pro -->
+                <div class="card-content">
+                    <!-- Copy explaining that this tier is for advanced, company-wide needs -->
+                    <p class="includes-text">For teams that need scale:</p>
+                    <!-- Unordered list of Enterprise-focused benefits -->
+                    <ul class="features-list">
+                        <!-- Benefit 1: centralised management and control for organisations -->
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Advanced admin controls
+                        </li>
+                        <!-- Benefit 2: deeper security and compliance support -->
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Enterprise-grade security
+                        </li>
+                        <!-- Benefit 3: direct, higher-touch support from the team -->
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Dedicated account support
+                        </li>
+                        <!-- Benefit 4: tailored onboarding and guidance for larger teams -->
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Custom onboarding and training
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Primary-style button inviting teams to start a sales conversation -->
+            <button class="download-button primary">Talk to sales</button>
         </div>
     </div>
 </body>

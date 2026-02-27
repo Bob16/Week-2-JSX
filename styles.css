@@ -1,148 +1,251 @@
+/* Global reset so all elements start from the same baseline */
 * {
+    /* Remove default outer spacing added by browsers */
     margin: 0;
+    /* Remove default inner spacing so we control all padding */
     padding: 0;
+    /* Include padding and border inside declared width/height */
     box-sizing: border-box;
 }
 
+/* Overall page canvas and typography */
 body {
+    /* Primary type stack, starting with Inter from Google Fonts */
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* Soft neutral background behind the pricing cards */
     background-color: #f7f7f4;
+    /* Use flexbox so we can center the cards block */
     display: flex;
+    /* Center the card group horizontally */
     justify-content: center;
+    /* Center the card group vertically */
     align-items: center;
+    /* Ensure full viewport height for vertical centering */
     min-height: 100vh;
+    /* Add breathing room around the content on smaller screens */
     padding: 20px;
 }
 
+/* Horizontal layout that holds all pricing cards */
 .cards-container {
+    /* Lay out child cards in a row */
     display: flex;
+    /* Explicitly use a horizontal flow */
     flex-direction: row;
+    /* Gap between the Hobby and Pro cards */
     gap: 24px;
+    /* Keep cards on one line so they do not wrap */
     flex-wrap: nowrap;
+    /* Center the set of cards within the page */
     justify-content: center;
+    /* Align card tops for a clean visual baseline */
     align-items: flex-start;
 }
 
+/* Single pricing card container */
 .card {
+    /* Stack all inner sections vertically */
     display: flex;
     flex-direction: column;
+    /* Shared minimum card height so both tiers feel balanced */
     min-height: 380px;
+    /* Slightly darker panel color than the page background */
     background-color: #f2f1ed;
+    /* Rounded corners to soften the card shape */
     border-radius: 4px;
+    /* Inner padding for comfortable breathing room around content */
     padding: 16px;
+    /* Fixed card width to keep layout stable */
     width: 320px;
+    /* Prevent this card from shrinking when space gets tight */
     flex-shrink: 0;
 }
 
+/* Group that holds plan title, price, and features */
 .card-top {
+    /* Stack content from top to bottom within the card */
     display: flex;
     flex-direction: column;
 }
 
+/* Plan name styling (e.g. Hobby, Pro) */
 .card-title {
+    /* Slightly larger type to emphasise plan names */
     font-size: 22px;
+    /* Line height tuned for balance with card padding */
     line-height: 28px;
+    /* Regular weight for a calm, neutral tone */
     font-weight: 400;
+    /* Dark neutral color for strong readability */
     color: #26251e;
+    /* Space below title before the price row */
     margin-bottom: 8px;
 }
 
+/* Row that contains the price amount and period */
 .card-price {
+    /* Base font size for the price line */
     font-size: 20px;
+    /* Muted color so the price feels light and understated */
     color: rgba(38, 37, 30, 0.5);
+    /* Inline flex keeps the row compact while allowing alignment control */
     display: inline-flex;
+    /* Align the numeric value and period text along their baselines */
     align-items: baseline;
 }
 
+/* Main numeric price or "Free" label */
 .card-price-amount {
+    /* Slightly larger to make the amount stand out */
     font-size: 22px;
+    /* Regular weight to match the typographic system */
     font-weight: 400;
+    /* Same muted color as the rest of the price row */
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Supporting text showing the billing period (e.g. /mo.) */
 .card-price-period {
+    /* Smaller than the main price so it reads as secondary info */
     font-size: 14px;
+    /* Same muted color as the price amount for consistency */
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Wrapper for the "Includes" label and feature list */
 .card-content {
+    /* Space between features and the button at the bottom */
     margin-bottom: 32px;
 }
 
+/* Lead‑in label for the feature list */
 .includes-text {
+    /* Base text size for supporting copy */
     font-size: 16px;
+    /* Slightly muted color so the label feels secondary to the title */
     color: rgba(38, 37, 30, 0.5);
+    /* Vertical spacing above and below the label */
     margin: 16px 0px;
 }
 
+/* Container for list of plan features */
 .features-list {
+    /* Remove native bullets because we use custom checkmarks */
     list-style: none;
+    /* Reset left padding so text aligns with card edge */
     padding: 0;
 }
 
+/* Each individual feature row (checkmark + text) */
 .features-list li {
+    /* Lay out checkmark and copy on the same line */
     display: flex;
+    /* Vertically center the checkmark against the text baseline */
     align-items: center;
+    /* Vertical gap between feature rows */
     margin-bottom: 8px;
+    /* Base size for feature copy */
     font-size: 16px;
+    /* Dark text color for easy scanning of benefits */
     color: #26251e;
 }
 
+/* Visual checkmark icon before each feature */
 .checkmark {
+    /* Match icon color to body text for a cohesive feel */
     color: #26251e;
+    /* Slightly smaller than feature text so it does not dominate */
     font-size: 14px;
+    /* Space between the icon and the feature copy */
     margin-right: 10px;
+    /* Regular weight to keep the icon light */
     font-weight: 400;
 }
 
+/* Base styling shared by primary and secondary buttons */
 .download-button {
+    /* Push the button to the bottom of the card for balance */
     margin-top: auto;
+    /* Button width adapts to its label rather than filling the card */
     width: fit-content;
+    /* Neutral background for the secondary button state */
     background-color: #e6e5e0;
+    /* Remove browser default border */
     border: none;
+    /* Fully rounded pill shape */
     border-radius: 999px;
+    /* Generous hit area around the label */
     padding: 14px 24px;
+    /* Base label size */
     font-size: 16px;
+    /* Semi‑bold weight to make the label feel intentional */
     font-weight: 500;
+    /* Dark text on light background for legibility */
     color: #333;
+    /* Pointer cursor to signal clickability */
     cursor: pointer;
+    /* Smooth background transition for hover and active states */
     transition: background-color 0.2s ease;
 }
 
+/* Hover state for the neutral button */
 .download-button:hover {
+    /* Slightly darken background to show hover feedback */
     background-color: #D8D6CE;
 }
 
+/* Active (pressed) state for the neutral button */
 .download-button:active {
+    /* Keep active close to hover for a simple interaction feel */
     background-color: #D8D6CE;
 }
 
+/* Primary button variation used for the Pro CTA */
 .download-button.primary {
+    /* Strong dark background to stand out as the main action */
     background-color: #111;
+    /* White text for high contrast on dark background */
     color: #fff;
 }
 
+/* Hover state for the primary button */
 .download-button.primary:hover {
+    /* Lighten the dark background slightly on hover */
     background-color: #333;
 }
 
+/* Active (pressed) state for the primary button */
 .download-button.primary:active {
+    /* Keep pressed color consistent with hover for stability */
     background-color: #333;
 }
 
+/* Fixed label at the top of the viewport describing page type */
 .page-label {
+    /* Keep the label visible even when the page scrolls */
     position: fixed;
+    /* Distance from the top edge of the viewport */
     top: 16px;
+    /* Start centering at the midpoint of the viewport */
     left: 50%;
+    /* Translate back by half its own width to fully center */
     transform: translateX(-50%);
+    /* Small font size suitable for a subtle label */
     font-size: 14px;
+    /* Medium gray text so label does not overpower the UI */
     color: #666;
+    /* White background chip that sits above the page */
     background: #fff;
+    /* Inner padding to create a pill‑like shape */
     padding: 8px 16px;
+    /* Rounded corners to match the card’s softness */
     border-radius: 8px;
+    /* Soft drop shadow to lift label off the background */
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+/* Emphasised part of the label text (e.g. "HTML version") */
 .page-label strong {
+    /* Slightly darker color to highlight the key words */
     color: #333;
 }
